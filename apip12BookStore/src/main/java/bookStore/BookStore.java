@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class BookStore {
 
-    private ArrayList<Book> books;
+    ArrayList<Book> books;
 
     public BookStore() {
         books = new ArrayList();
@@ -23,7 +23,6 @@ public class BookStore {
         } else {
             books.add(book);
         }
-
     }
 
     public void deleteBook(String author, String title){
@@ -37,6 +36,7 @@ public class BookStore {
                 ")");}
 
     }
+
 
     protected int seekBook(String author, String title) {
         for (int i = 0; i < books.size(); i++) {

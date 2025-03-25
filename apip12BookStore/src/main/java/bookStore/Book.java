@@ -5,8 +5,8 @@ public class Book {
     private String author;
     private String title;
     private double basePrice;
-    private static double percVAT = 10.0;
-    private  double finalPrice;
+    static double percVAT = 10.0;
+    double finalPrice;
 
     public Book(String author, String title, double basePrice) {
         this.author = author;
@@ -47,6 +47,7 @@ public class Book {
     public static double getVAT() {
         return percVAT;
     }
+
 
     public static void setVAT(double vat) {
         percVAT = vat;

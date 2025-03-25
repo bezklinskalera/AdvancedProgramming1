@@ -51,6 +51,7 @@ public class TestRunnerPr12 {
         public void afterClass() {
             // Code executed after the last test method
             System.out.println("End of Book JUnit Test");
+
         }
         @BeforeEach
         public void setUp() {
