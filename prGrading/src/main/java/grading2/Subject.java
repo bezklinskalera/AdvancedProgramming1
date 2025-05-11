@@ -1,8 +1,5 @@
 package grading2;
 
-import grading.Student;
-import grading.StudentException;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,11 +7,11 @@ public class Subject {
 
   private String name;
   private List<String> errors;
-  private List<grading.Student> students;
+  private List<Student> students;
 
-  public Subject(String name, String[] students) throws grading.StudentException {
+  public Subject(String name, String[] students) {
     this.name = name;
-    this.students = new ArrayList<grading.Student>();
+    this.students = new ArrayList<Student>();
     this.errors = new ArrayList<String>();
 
     for (String s : students) {
@@ -22,23 +19,23 @@ public class Subject {
         String[] studentDate = s.split(";");
 
         if (studentDate.length < 3) {
-          throw new grading.StudentException("Missing data");
+          throw new StudentException("Missing data");
         }
 
         if(!isDouble(studentDate[2])){
-          throw new grading.StudentException("Non numerical grade");
+          throw new StudentException("Non numerical grade");
         }
 
-        grading.Student student = new grading.Student(studentDate[0], studentDate[1], Double.parseDouble(studentDate[2]));
+        Student student = new Student(studentDate[0], studentDate[1], Double.parseDouble(studentDate[2]));
         this.students.add(student);
-      } catch (grading.StudentException e) {
+      } catch (StudentException e) {
         this.errors.add("ERROR. " + e.getMessage() + ": " + s);
       }
     }
 
   }
 
-  public List<grading.Student> getStudents() {
+  public List<Student> getStudents() {
     return students;
   }
 
@@ -59,53 +56,65 @@ public class Subject {
     return name;
   }
 
-  public double getGrade(grading.Student st) throws grading.StudentException {
+  public double getGrade(Student st) throws StudentException {
 
-    for (grading.Student student : students) {
+    for (Student student : students) {
       if (student.getName().equalsIgnoreCase(st.getName()) ||
               student.getDni().equalsIgnoreCase(st.getDni())) {
         return student.getGrade();
       }
     }
     String message = "Student " + st + " has not been found";
-    throw new grading.StudentException(message);
+    throw new StudentException(message);
   }
 
 
-  public double getAverage() throws grading.StudentException {
-    if (students.isEmpty()){
+  public double getAverage() throws StudentException {
+    if (students.isEmpty()) {
       throw new StudentException("No students");
     }
-    double studentGrade = 0;
+
+    double sum = 0;
 
     for (Student student : students) {
-      studentGrade = studentGrade + student.getGrade();
+      sum += student.getGrade();
     }
 
-    return studentGrade/students.size();
+    return sum / students.size();
+  }
+
+  public double getAverage(AverageCalculation calc) throws StudentException {
+    return calc.calculate(students);
   }
 
   @Override
   public String toString() {
-
     StringBuilder sb = new StringBuilder();
-    sb.append(name);
-    sb.append(": {");
-    sb.append(students.get(0));
-    for (int i = 1; i < students.size(); i++) {
-      sb.append(", \n");
-      sb.append(students.get(i));
+    sb.append(name).append(": { ");
+    sb.append("[");
+
+    for (int i = 0; i < students.size(); i++) {
+      sb.append(students.get(i).toString());
+
+      if (i < students.size() - 1) {
+        sb.append(", ");
+      }
     }
 
-    sb.append("\n");
+    sb.append("]");
+    sb.append(", ");
+    sb.append("[");
 
-    sb.append(errors.get(0));
-    for (int i = 1; i < errors.size(); i++) {
-      sb.append(", \n");
+    for (int i = 0; i < errors.size(); i++) {
       sb.append(errors.get(i));
+
+      if (i < errors.size() - 1) {
+        sb.append(", ");
+      }
     }
 
-    sb.append("}");
+    sb.append("]");
+    sb.append(" }");
 
     return sb.toString();
   }

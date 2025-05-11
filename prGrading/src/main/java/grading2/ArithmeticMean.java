@@ -2,20 +2,19 @@ package grading2;
 
 import java.util.List;
 
-public class ArithmeticMean implements AverageCalculation{
+public class ArithmeticMean implements AverageCalculation {
     @Override
-    public double calculate(List<Student> sts) throws StudentException, grading.StudentException {
+    public double calculate(List<Student> sts) throws StudentException {
+        if (sts == null || sts.isEmpty()) {
+            throw new StudentException("No students");
+        }
 
-            if (sts.isEmpty()){
-                throw new StudentException("No students");
-            }
-            double studentGrade = 0;
+        double sum = 0.0;
 
-            for (Student student : sts) {
-                studentGrade = studentGrade + student.getGrade();
-            }
+        for (Student student : sts) {
+            sum += student.getGrade();
+        }
 
-            return studentGrade/sts.size();
-
+        return sum / sts.size();
     }
 }

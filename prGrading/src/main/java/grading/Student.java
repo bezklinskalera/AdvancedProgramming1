@@ -8,11 +8,6 @@ public class Student {
   private String name;
   private double grade;
 
-  public Student(String dni, String name) {
-    this.dni = dni;
-    this.name = name;
-  }
-
   public Student(String dni, String name, double grade) throws StudentException {
 
     if (grade<0){
@@ -25,6 +20,14 @@ public class Student {
 
   }
 
+  public Student(String dni, String name) {
+    this.dni = dni;
+    this.name = name;
+    grade = 0;
+  }
+
+
+
   public String getDni() {
     return dni;
   }
@@ -33,26 +36,23 @@ public class Student {
     return name;
   }
 
-  public double getGrade() throws StudentException {
-
-    if (grade<0){
-      throw new StudentException("Negative grade");
-    }
+  public double getGrade() {
     return grade;
   }
+
 
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (getClass() != o.getClass()) return false;
+    if (o == null || getClass() != o.getClass()) return false;
     Student student = (Student) o;
-    return dni.equalsIgnoreCase(student.dni) &&
-            name.equals(student.name);
+    return (dni != null ? dni.equalsIgnoreCase(student.dni) : student.dni == null)
+            && Objects.equals(name, student.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dni.toUpperCase(), name) ;
+    return Objects.hash(name, dni == null ? 0 : dni.toLowerCase());
   }
 
   @Override

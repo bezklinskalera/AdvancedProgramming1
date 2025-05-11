@@ -11,8 +11,8 @@ public class Subject {
 
   public Subject(String name, String[] students) throws StudentException {
     this.name = name;
-    this.students = new ArrayList<Student>();
-    this.errors = new ArrayList<String>();
+    this.students = new ArrayList<>();
+    this.errors = new ArrayList<>();
 
     for (String s : students) {
       try {
@@ -84,25 +84,32 @@ public class Subject {
 
   @Override
   public String toString() {
-
     StringBuilder sb = new StringBuilder();
-    sb.append(name);
-    sb.append(": {");
-    sb.append(students.get(0));
-    for (int i = 1; i < students.size(); i++) {
-      sb.append(", \n");
-      sb.append(students.get(i));
+    sb.append(name).append(": { ");
+    sb.append("[");
+
+    for (int i = 0; i < students.size(); i++) {
+      sb.append(students.get(i).toString());
+
+      if (i < students.size() - 1) {
+        sb.append(", ");
+      }
     }
 
-    sb.append("\n");
+    sb.append("]");
+    sb.append(", ");
+    sb.append("[");
 
-    sb.append(errors.get(0));
-    for (int i = 1; i < errors.size(); i++) {
-      sb.append(", \n");
+    for (int i = 0; i < errors.size(); i++) {
       sb.append(errors.get(i));
+
+      if (i < errors.size() - 1) {
+        sb.append(", ");
+      }
     }
 
-    sb.append("}");
+    sb.append("]");
+    sb.append(" }");
 
     return sb.toString();
   }

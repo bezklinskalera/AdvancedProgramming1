@@ -4,6 +4,6 @@ import java.util.List;
 
 public interface AverageCalculation {
 
-    double calculate(List<Student> sts) throws StudentException, grading.StudentException;
+    double calculate(List<Student> sts) throws StudentException;
 
 }
