@@ -1,0 +1,44 @@
+2025-05-10 20:55:12 INFO    [200] GET /home.html from IP 192.168.1.10 - Request successful.
+2025-05-10 20:55:34 INFO    [200] GET /about.html from IP 192.168.1.11 - Request successful.
+2025-05-10 20:56:01 WARNING [404] GET /missing.html from IP 192.168.1.12 - Page not found.
+2025-05-10 20:56:35 ERROR   [500] POST /process-data from IP 192.168.1.13 - Internal server error.
+2025-05-10 20:57:02 INFO    [200] GET /services.html from IP 192.168.1.14 - Request successful.
+2025-05-10 20:57:30 WARNING [403] GET /admin-panel from IP 192.168.1.15 - Access forbidden.
+2025-05-10 20:58:12 DEBUG   [302] GET /redirect from IP 192.168.1.16 - Temporary redirection.
+2025-05-10 20:58:45 INFO    [200] GET /contact.html from IP 192.168.1.17 - Request successful.
+2025-05-10 20:59:05 WARNING [404] GET /unknown-page.html from IP 192.168.1.18 - Page not found.
+2025-05-10 20:59:35 INFO    [201] POST /new-user from IP 192.168.1.19 - New resource created.
+2025-05-10 21:00:10 ERROR   [500] GET /error-page from IP 192.168.1.20 - Internal server error.
+2025-05-10          ERROR   [500] GET /error-page from IP 192.168.1.20 - Internal server error.
+2025-05-10 21:00:45 INFO    [200] GET /dashboard.html from IP 192.168.1.21 - Request successful.
+2025-05-10 21:01:12 WARNING [403] GET /restricted-content from IP 192.168.1.22 - Access forbidden.
+2025-05-10 21:01:50 INFO    [304] GET /cached-content from IP 192.168.1.23 - Not modified.
+2025-05-10 21:02:20 DEBUG   [307] GET /temporary-redirect from IP 192.168.1.24 - Temporary redirection.
+2025-05-10 21:02:20         [307] GET /temporary-redirect from IP 192.168.1.24 - Temporary redirection.
+2025-05-10 21:02:55 ERROR   [500] POST /submit-form from IP 192.168.1.25 - Internal server error.
+2025-05-10 21:03:30 INFO    [200] GET /profile.html from IP 192.168.1.26 - Request successful.
+2025-05-10 21:04:05 WARNING [404] GET /non-existent.html from IP 192.168.1.27 - Page not found.
+2025-05-10 21:04:50 INFO    [200] GET /settings.html from IP 192.168.1.28 - Request successful.
+2025-05-10 21:05:35 DEBUG   [302] GET /forwarded-page from IP 192.168.1.29 - Temporary redirection.
+2025-05-10 21:06:15 INFO    [200] GET /help.html from IP 192.168.1.30 - Request successful.
+2025-05-10 21:07:00 WARNING [401] GET /private-data from IP 192.168.1.31 - Unauthorized access attempt.
+2025-05-10 21:07:45 ERROR   [500] POST /upload-file from IP 192.168.1.32 - Internal server error.
+2025-05-10 21:08:30 INFO    [200] GET /news.html from IP 192.168.1.33 - Request successful.
+2025-05-10 21:09:15 WARNING [404] GET /error-page from IP 192.168.1.34 - Page not found.
+2025-05-10 21:10:00 DEBUG   [307] GET /test-redirect from IP 192.168.1.35 - Temporary redirection.
+2025-05-10 21:10:00 DEBUG   [307] GET
+2025-05-10 21:10:45 INFO    [200] GET /forum.html from IP 192.168.1.36 - Request successful.
+2025-05-10 21:11:30 ERROR   [500] POST /update-profile from IP 192.168.1.37 - Internal server error.
+2025-05-10 21:12:15 WARNING [403] GET /admin-settings from IP 192.168.1.38 - Access forbidden.
+2025-05-10 21:13:00 INFO    [201] POST /create-post from IP 192.168.1.39 - New resource created.
+2025-05-10 21:13:45 DEBUG   [302] GET /auto-forward from IP 192.168.1.40 - Temporary redirection.
+2025-05-10 21:14:30 INFO    [200] GET /blog.html from IP 192.168.1.41 - Request successful.
+2025-05-10 21:15:15 ERROR   [500] POST /login from IP 192.168.1.42 - Internal server error.
+2025-05-10 21:16:00 WARNING [404] GET /lost-page from IP 192.168.1.43 - Page not found.
+2025-05-10 21:16:45 DEBUG   [307] GET /page-redirect from IP 192.168.1.44 - Temporary redirection.
+2025-05-10 21:17:30 INFO    [200] GET /resources.html from IP 192.168.1.45 - Request successful.
+2025-05-10 21:18:15 WARNING [403] GET /restricted-section from IP 192.168.1.46 - Access forbidden.
+2025-05-10 21:19:00 INFO    [304] GET /unchanged-content from IP 192.168.1.47 - Not modified.
+2025-05-10 21:19:45 ERROR   [500] POST /submit-comment from IP 192.168.1.48 - Internal server error.
+2025-05-10 21:20:30 INFO    [200] GET /search.html from IP 192.168.1.49 - Request successful.
+2025-05-10 21:21:15 DEBUG   [302] GET /forwarded-request from IP 192.168.1.50 - Temporary redirection.
