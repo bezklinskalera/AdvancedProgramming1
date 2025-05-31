@@ -72,7 +72,7 @@ public class WordCounter {
                 return words.get(i);
             }
         }
-        throw new NoSuchElementException();
+        throw new NoSuchElementException("Not found word " + pal);
     }
 
     public void presentWords(String fileName) throws FileNotFoundException {
@@ -89,6 +89,7 @@ public class WordCounter {
 
     @Override
     public String toString() {
+        if (words.isEmpty()) return "[]";
 
         StringBuilder sb = new StringBuilder();
         sb.append("[");
